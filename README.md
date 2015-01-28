@@ -15,11 +15,11 @@ Automatically follow redirects.
     
     HttpClient()
         .use(follower())
-        .get('https://api.github.com/repos/go-fetch-js/follow-redirects', function(error, response) {
+        .get('http://google.com', function(error, response) {
             console.log(error, response.getStatus());
         })
     ;
-    
+   
 
 ## License
 

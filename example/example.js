@@ -3,7 +3,7 @@ var follower = require('..');
 
 HttpClient()
 	.use(follower())
-	.get('http://www.google.com/', function(error, response) {
+	.get('http://google.com.au', function(error, response) {
 		console.log(error, response.getStatus());
 	})
 ;
