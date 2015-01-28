@@ -1,0 +1,39 @@
+{
+  "name": "go-fetch-follow-redirects",
+  "description": "Automatically follow redirects.",
+  "keywords": [
+    "follow-redirects",
+    "redirect",
+    "follow",
+    "location",
+    "302",
+    "301",
+    "status",
+    "header",
+    "http",
+    "https",
+    "client",
+    "request",
+    "fetch"
+  ],
+  "version": "0.1.0",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:go-fetch-js/follow-redirects.git"
+  },
+  "bugs": {
+    "url": "https://github.com/go-fetch-js/follow-redirects/issues"
+  },
+  "devDependencies": {
+    "go-fetch": "^1.2.0"
+  },
+  "peerDependencies": {
+    "go-fetch": "^1.2.0"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "dependencies": {
+    "debug": "^2.1.1"
+  }
+}
