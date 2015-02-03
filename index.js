@@ -6,9 +6,9 @@ var debug = require('debug')('go-fetch-follow-redirects');
  */
 module.exports = function() {
 	return function(client) {
-		client.on('after', function(request, response, next) {
+		client.on('after', function(event, next) {
 
-			var location = response.getHeader('Location');
+			var location = event.response.getHeader('Location');
 
 			//check there's a location to redirect to
 			if (!location) {
@@ -16,12 +16,11 @@ module.exports = function() {
 			}
 
 			//load the new response
-			debug('following redirect to "%s"', location);
+			debug('following redirect from "%s" to "%s"', event.request.getUrl().toString(), location);
 			client.get(location, {}, function(error, followedResponse) {
 				if (error) return next(error);
 
-				//TODO: when using an event object in the future, switch the response object instead of copying properties
-				response
+				event.response
 					.setStatus(followedResponse.getStatus())
 					.setHeaders(followedResponse.getHeaders())
 					.setBody(followedResponse.getBody())
