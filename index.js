@@ -14,6 +14,9 @@ module.exports = function() {
 			if (!location) {
 				return next();
 			}
+			
+			//resolve URL for servers which don't return a URL including the scheme and hostname
+			location = URL.resolve(event.request.getUrl().toString(), location);
 
 			//load the new response
 			debug('following redirect from "%s" to "%s"', event.request.getUrl().toString(), location);
