@@ -16,7 +16,7 @@
     "request",
     "fetch"
   ],
-  "version": "1.0.0",
+  "version": "1.0.1",
   "repository": {
     "type": "git",
     "url": "git@github.com:go-fetch-js/follow-redirects.git"
@@ -25,7 +25,8 @@
     "url": "https://github.com/go-fetch-js/follow-redirects/issues"
   },
   "devDependencies": {
-    "go-fetch": "^2.0.0"
+    "go-fetch": "^2.0.0",
+    "sinon": "^1.15.4"
   },
   "peerDependencies": {
     "go-fetch": "^2.0.0"

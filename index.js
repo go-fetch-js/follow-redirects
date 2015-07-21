@@ -1,3 +1,4 @@
+var URL   = require('url');
 var debug = require('debug')('go-fetch-follow-redirects');
 
 /**
@@ -20,7 +21,7 @@ module.exports = function() {
 
 			//load the new response
 			debug('following redirect from "%s" to "%s"', event.request.getUrl().toString(), location);
-			client.get(location, {}, function(error, followedResponse) {
+      client.get(location, {}, function(error, followedResponse) {
 				if (error) return next(error);
 
 				event.response
